@@ -8,6 +8,7 @@ from multiprocessing.managers import BaseManager
 class BotManager(BaseManager):
     pass
 
+BotManager.register('order_pos')
 BotManager.register('real_pos')
 
 if __name__ == '__main__':

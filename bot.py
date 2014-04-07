@@ -67,6 +67,7 @@ real_pos = Point(0, 0)
 class BotManager(BaseManager):
     pass
 
+BotManager.register('order_pos', lambda: order_pos, proxytype=PointProxy)
 BotManager.register('real_pos', lambda: real_pos, proxytype=PointProxy)
 
 if __name__ == '__main__':
