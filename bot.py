@@ -4,7 +4,6 @@
 from multiprocessing import Lock
 from multiprocessing.managers import BaseManager
 from multiprocessing.managers import BaseProxy
-from multiprocessing.sharedctypes import Value
 
 
 class Point(object):
