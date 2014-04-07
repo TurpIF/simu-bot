@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
             dx = order[0] - pos[0]
             dy = order[1] - pos[1]
-            dl = dx**2 + dy**2
+            dl = dx ** 2 + dy ** 2
             if dl > linear_speed ** 2:
                 scl = linear_speed / math.sqrt(dl)
                 dx *= scl

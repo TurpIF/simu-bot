@@ -3,7 +3,6 @@
 
 from multiprocessing import Lock
 from multiprocessing.managers import BaseManager
-from multiprocessing.managers import BaseProxy
 
 
 class Point(object):
@@ -51,6 +50,7 @@ class Point(object):
 
 order_pos = Point(100, 100, 0)
 real_pos = Point(0, 0, 0)
+
 
 class BotManager(BaseManager):
     pass
