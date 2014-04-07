@@ -61,65 +61,11 @@ class PointProxy(BaseProxy):
 
 
 order_pos = Point(0, 0)
-l_order_pos = Lock()
-
 real_pos = Point(0, 0)
-l_real_pos = Lock()
-
-
-def set_order_pos(x, y, a):
-    """
-    Give a new order to set the position.
-
-    Arguments:
-    x -- Real : Position on the X axis
-    y -- Real : Position on the Y axis
-    a -- Radian : Angular position in direct sens
-    """
-    with l_order_pos:
-        order_pos.x = x
-        order_pos.y = y
-        order_pos.a = a
-
-
-def get_order_pos():
-    """
-    Get the current order about the position.
-    """
-    with l_order_pos:
-        return Point(order_pos.x, order_pos.y, order_pos.a)
-
-
-def set_real_pos(x, y, a):
-    """
-    Update the real position.
-
-    Arguments:
-    x -- Real : Position on the X axis
-    y -- Real : Position on the Y axis
-    a -- Radian : Angular position in direct sens
-    """
-    with l_order_pos:
-        order_pos.x = x
-        order_pos.y = y
-        order_pos.a = a
-
-
-def get_real_pos():
-    """
-    Get the current real position.
-    """
-    with l_order_pos:
-        return Point(real_pos.x, real_pos.y, real_pos.a)
 
 
 class BotManager(BaseManager):
     pass
-
-BotManager.register('set_order_pos', callable=set_order_pos)
-BotManager.register('get_order_pos', callable=get_order_pos)
-BotManager.register('set_real_pos', callable=set_real_pos)
-BotManager.register('get_real_pos', callable=get_real_pos)
 
 BotManager.register('real_pos', lambda: real_pos, proxytype=PointProxy)
 
