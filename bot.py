@@ -11,8 +11,8 @@ class Point(object):
     Data structure of a shared point in 2 dimension with the angular position.
 
     Arguments:
-    x -- Real : Position on the X axis
-    y -- Real : Position on the Y axis
+    x -- Millimeter : Position on the X axis
+    y -- Millimeter : Position on the Y axis
     a -- Radian : Angular position in direct sens
     """
     def __init__(self, x, y, a=0):
@@ -39,8 +39,8 @@ class Point(object):
         lock.
 
         Arguments:
-        x -- Real : Position on the X axis
-        y -- Real : Position on the Y axis
+        x -- Millimeter : Position on the X axis
+        y -- Millimeter : Position on the Y axis
         a -- Radian : Angular position in direct sens
         """
         with self.lock:
@@ -49,7 +49,7 @@ class Point(object):
             self.a = a
 
 
-order_pos = Point(0, 0, 0)
+order_pos = Point(100, 100, 0)
 real_pos = Point(0, 0, 0)
 
 class BotManager(BaseManager):
